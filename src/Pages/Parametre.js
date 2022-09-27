@@ -1,4 +1,4 @@
-import logo from '../plus.png'
+import logo from '../assets/plus.png'
 const Client = () => {
     return (
         <div className="  h-screen" >

@@ -1,7 +1,7 @@
 
-import search from '../../magnifying-glass.png'
+import search from '../../assets/magnifying-glass.png'
 import Env from "../../config.js"
-import logo from '../../down-arrow.png'
+import logo from '../../assets/down-arrow.png'
 import { useEffect, useState } from "react";
 export default function FormeJuridique() {
 

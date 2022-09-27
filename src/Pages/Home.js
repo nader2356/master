@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Client from './AddClient'
 import Parametre from './Parametre'
-import logo from '../down-arrow.png'
+import logo from '../assets/down-arrow.png'
 import ListeClients from './ListdesClients'
 const ContentCient = ({ currentPage }) => {
 

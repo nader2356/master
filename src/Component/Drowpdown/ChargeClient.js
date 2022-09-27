@@ -1,6 +1,6 @@
 
-import search from '../../magnifying-glass.png'
-import logo from '../../down-arrow.png'
+import search from '../../assets/magnifying-glass.png'
+import logo from '../../assets/down-arrow.png'
 import Env from "../../config.js"
 import { useEffect, useState } from "react";
 const   ChargeClient  = ()  => {

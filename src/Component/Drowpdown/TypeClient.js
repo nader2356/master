@@ -1,9 +1,9 @@
 
-import search from '../../magnifying-glass.png'
+import search from '../../assets/magnifying-glass.png'
 import axios from "axios";
 import Env from "../../config.js"
-import logo from '../../down-arrow.png'
-import logo3 from '../../plu2s.png';
+import logo from '../../assets/down-arrow.png'
+import logo3 from '../../assets/plu2s.png';
 import { useEffect, useState } from "react";
 const  TypeClient = () => {
 
