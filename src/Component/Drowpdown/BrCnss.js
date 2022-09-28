@@ -67,7 +67,7 @@ const    BrCnss = ()  => {
                         type="text"
                         value={InputValueBrCnss}
                         onChange={(e) => SetInputValue(e.target.value.toLowerCase())}
-                        placeholder="Enter country name"
+                        placeholder="Search BrCnss"
                         className="placeholder:text-white p-2 outline-none bg-gray"
                     />
                 </div>
@@ -85,10 +85,11 @@ const    BrCnss = ()  => {
                         onClick={() => {
                             SetSelected(item?.BrCnss);
                             localStorage.setItem('SelectBrCnss',item?.Id );
-                            console.log(SelectedBrCnss)
+                            console.log(item?.Id)
                             if (item?.BrCnss?.toLowerCase() !== SelectedBrCnss.toLowerCase()) {
                                 SetSelected(item?.BrCnss);
                                 SetOpenBrCnss(false);
+                                
                                 SetInputValue("");
                             }
                         }}

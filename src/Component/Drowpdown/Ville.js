@@ -75,7 +75,7 @@ const  Ville = () =>  {
                         type="text"
                         value={InputValueVille}
                         onChange={(e) => SetInputValue(e.target.value.toLowerCase())}
-                        placeholder="Enter country name"
+                        placeholder="Search Ville"
                         className="placeholder:text-white p-2 outline-none bg-gray"
                     />
                      
@@ -94,7 +94,7 @@ const  Ville = () =>  {
                         onClick={() => {
                             SetSelected(item?.Ville);
                             localStorage.setItem('SelectVille',item?.Id );
-                            console.log(SelectedVille)
+                            console.log(item?.Id)
                             if (item?.Ville?.toLowerCase() !== SelectedVille.toLowerCase()) {
                                 SetSelected(item?.Ville);
                                 SetOpenVille(false);

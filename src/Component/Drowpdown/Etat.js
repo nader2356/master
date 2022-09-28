@@ -61,14 +61,14 @@ const    Etat = ()  => {
             <ul
                 className={`bg-gray mt-2 ml-5 w-full overflow-y-auto ${OpenListEtat ? "max-h-60" : "max-h-0"
                     } `}
-            >
+             >
                 <div className="flex items-center px-2 sticky top-0 bg-gray">
                 <img className="text-right h-4 w-4  mr-1 ml-1" src={search} alt="" />
                     <input
                         type="text"
                         value={InputValueEtat}
                         onChange={(e) => SetInputValue(e.target.value.toLowerCase())}
-                        placeholder="Enter country name"
+                        placeholder="Search Etat"
                         className="placeholder:text-white p-2 outline-none bg-gray"
                     />
                 </div>
@@ -86,7 +86,7 @@ const    Etat = ()  => {
                         onClick={() => {
                             SetSelected(item?.Etat);
                             localStorage.setItem('SelectEtat',item?.Id );
-                            console.log(SelectedEtat)
+                            console.log(item?.Id)
                             if (item?.Etat?.toLowerCase() !== SelectedEtat.toLowerCase()) {
                                 SetSelected(item?.Etat);
                                 SetOpenEtat(false);

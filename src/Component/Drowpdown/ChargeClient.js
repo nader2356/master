@@ -73,7 +73,7 @@ return (
                     type="text"
                     value={InputValueChargeClient}
                     onChange={(e) => SetInputValue(e.target.value.toLowerCase())}
-                    placeholder="Enter country name"
+                    placeholder="Search Chargé Client"
                     className="placeholder:text-white p-2 outline-none bg-gray"
                 />
 
@@ -92,7 +92,7 @@ return (
                     onClick={() => {
                         SetSelected(item?.ChargeClient);
                         localStorage.setItem('SelectChargeClient',item?.Id );
-                        console.log(SelectedChargeClient)
+                        console.log(item?.Id)
                         localStorage.setItem('s1',item?.Id );
                         if (item?.ChargeClient?.toLowerCase() !== SelectedChargeClient.toLowerCase()) {
                             SetSelected(item?.ChargeClient);

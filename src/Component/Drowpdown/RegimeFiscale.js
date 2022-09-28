@@ -66,7 +66,7 @@ export default function FormeJuridique() {
                         type="text"
                         value={InputValueRegimeFiscale}
                         onChange={(e) => SetInputValue(e.target.value.toLowerCase())}
-                        placeholder="Enter country name"
+                        placeholder="Search Regime Fiscale"
                         className="placeholder:text-white p-2 outline-none bg-gray"
                     />
                      
@@ -86,6 +86,7 @@ export default function FormeJuridique() {
                             SetSelected(item?.RegimeFiscale);
                             localStorage.setItem('SelectRegimeFiscale',item?.Id );
                             console.log(SelectedRegimeFiscale)
+                            console.log(item?.Id)
                             if (item?.RegimeFiscale?.toLowerCase() !== SelectedRegimeFiscale.toLowerCase()) {
                                 SetSelected(item?.RegimeFiscale);
                                 SetOpenRegimeFiscale(false);

@@ -67,7 +67,7 @@ const    Bureau = ()  => {
                         type="text"
                         value={InputValueBureau}
                         onChange={(e) => SetInputValue(e.target.value.toLowerCase())}
-                        placeholder="Enter country name"
+                        placeholder="Search Bureau"
                         className="placeholder:text-white p-2 outline-none bg-gray"
                     />
                 </div>
@@ -85,7 +85,7 @@ const    Bureau = ()  => {
                         onClick={() => {
                             SetSelected(item?.FormeJuridique);
                             localStorage.setItem('SelectBureau',item?.Id );
-                            console.log(SelectedBureau)
+                            console.log(item?.Id)
                             if (item?.Bureau?.toLowerCase() !== SelectedBureau.toLowerCase()) {
                                 SetSelected(item?.Bureau);
                                 SetOpenBureau(false);

@@ -58,8 +58,8 @@ const  TypeClient = () => {
                 "method": "Post",
                 "url": "/param_type_client",
                 "headers": {
-                    'xc-auth': process.env.KEY,
-                    'xc-token': process.env.TOKEN,
+                    'xc-auth': Env.KEY,
+                    'xc-token': Env.TOKEN,
                 },
                 "data": {
                     "type": InputValueTypeClient
@@ -99,7 +99,7 @@ const  TypeClient = () => {
                         type="text"
                         value={InputValueTypeClient}
                         onChange={(e) => SetInputValue(e.target.value.toLowerCase())}
-                        placeholder="Enter country name"
+                        placeholder="Search Type Client /Add"
                         className="placeholder:text-white p-2 outline-none bg-gray"
                     />
                    
@@ -118,7 +118,7 @@ const  TypeClient = () => {
                         onClick={() => {
                             SetSelected(item?.TypeClient);
                             localStorage.setItem('SelectTypeClient',item?.Id );
-                            console.log(SelectedTypeClient)
+                            console.log(item?.Id)
                             if (item?.TypeClient?.toLowerCase() !== SelectedTypeClient.toLowerCase()) {
                                 SetSelected(item?.TypeClient);
                                 SetOpenTypeClient(false);                        
@@ -130,9 +130,9 @@ const  TypeClient = () => {
                     </li>
                     
                 ))}
-                <div className="flex justify-start px-2 sticky top-0 w-[90%] mb-5 p-4 mt-1  border-2 ml-[5%]">
+                <div className="flex justify-start px-2 sticky top-0 w-[20%] mb-5 p-4   ml-[5%]">
                     <img className=" h-5 w-5 ml-[45%]  mr-4" src={logo3} alt="" onClick={() => { HandleSubmitAddTypeClient() }} />
-
+        <h5>{InputValueTypeClient}</h5>
                   
                 </div>
             </ul>

@@ -68,7 +68,7 @@ export default function FormeJuridique() {
                         type="text"
                         value={InputValueFormeJuridique}
                         onChange={(e) => SetInputValue(e.target.value.toLowerCase())}
-                        placeholder="Enter country name"
+                        placeholder="Search Forme Juridique"
                         className="placeholder:text-white p-2 outline-none bg-gray"
                     />
                       
@@ -87,7 +87,7 @@ export default function FormeJuridique() {
                         onClick={() => {
                             SetSelected(item?.FormeJuridique);
                             localStorage.setItem('SelectFormeJuridique',item?.Id );
-                            console.log(SelectedFormeJuridique)
+                            console.log(item?.Id)
                             if (item?.FormeJuridique?.toLowerCase() !== SelectedFormeJuridique.toLowerCase()) {
                                 SetSelected(item?.FormeJuridique);
                                 SetOpenFormeJuridique(false);

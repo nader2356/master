@@ -1,8 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import axios from "axios";
-import Env from "../config.js"
-import React, { useState } from 'react';
+import { useEffect, useState } from "react";
+import Env from "../config.js";
+import check from '../assets/check.png';
+import React from 'react';
 import ChargeClient from '../Component/Drowpdown/ChargeClient';
 import FormeJuridique from "../Component/Drowpdown/FormeJuridique";
 import TypeClient from '../Component/Drowpdown/TypeClient';
@@ -30,8 +32,10 @@ const Client = () => {
     const { MatriculeFiscale, ActivitePrincipale, Adresse, RaisonSocial, RegistreDeCommerce, Fax, email, telephone } = FormValues
     const [Code, SetCode] = useState();
     const [formErrors, SetFormErrors] = useState("");
+    const [ModalAddSuccefuly, SetModalAddSuccefuly] = useState(false);
+    const [Modal, SetModalErreur] = useState(false);
 
-
+   
     const HandleChange = async e => {
         const { name, value } = e.target;
         SetFormValues({ ...FormValues, [name]: value });
@@ -64,8 +68,11 @@ const Client = () => {
         axios.request(options).then(function (response) {
             console.log(response.data);
             localStorage.setItem('user', JSON.stringify(response.data.Id));
+           SetModalAddSuccefuly(!ModalAddSuccefuly);
             console.log(ClientId)
         }).catch(function (error) {
+            SetModalErreur(!Modal);
+
             console.error(error);
         });
         const ClientId = localStorage.getItem('user');
@@ -234,14 +241,14 @@ const Client = () => {
     };
 
     return (
-        <div className="" >
- 
+        <><div className="">
+
             <div className="  px-5 py-4 ml-[17%] mt-4  md:w-8/12 ">
-            <p className="font-bold text-xl text-center border-4   ">les information du clients</p>
-            
-        </div>
-        
-        <div className="  ml-2 ">
+                <p className="font-bold text-xl text-center border-4   ">les information du clients</p>
+
+            </div>
+
+            <div className="  ml-2 ">
                 <form onSubmit={HandleSubmit} className=" border rounded-md pt-8 mb-20 mt-5  pr-8 ml-[4%]  md:w-11/12  max-auto  ">
 
                     <div className="grid grid-cols-2">
@@ -289,7 +296,7 @@ const Client = () => {
                                 </span>
                             </div>
                             <label className="ml-10 ">Matricule Fiscale</label>
-                           
+
                             <input onChange={HandleChange} value={MatriculeFiscale} type="text" name="MatriculeFiscale" className="mt-2 px-3 py-2  mb-3 border ml-5  h-10 w-full rounded-sm sm:text-sm " />
                             <div className="grid grid-cols-1">
                                 <span className="text-sm  text-red-600 ml-8  mb-2">
@@ -367,17 +374,17 @@ const Client = () => {
 
                             <label className=" ml-10  ">BrCnss</label>
 
-<div className="grid grid-cols-1">
-    <BrCnss></BrCnss>
-</div>
+                            <div className="grid grid-cols-1">
+                                <BrCnss></BrCnss>
+                            </div>
 
 
 
-<label className=" ml-10  ">Etat</label>
+                            <label className=" ml-10  ">Etat</label>
 
-<div className="grid grid-cols-1">
-    <Etat></Etat>
-</div>
+                            <div className="grid grid-cols-1">
+                                <Etat></Etat>
+                            </div>
 
 
                         </div>
@@ -390,9 +397,28 @@ const Client = () => {
                 </form>
 
             </div>
-            </div>
+           
+        </div>
+        { ModalAddSuccefuly &&
+       <div className="absolute right-0 top-0 m-2" >
+       <div  className="flex item-center bg-green-500  border-green-700 border-l-4 py-3 px-20 shadow-md mb-2">
+       <img className=" h-5 w-5 mr-5 rounded-full text-white" src={check} alt="" />
+        <h2 className="text-white max-w-xl"> Client ajouter avec sucées</h2>
+    
+       </div>
+     </div>
+}
 
-
+{ Modal &&
+       <div className="absolute right-0 top-0 m-2" >
+       <div  className="flex item-center bg-red-500  border-red-700 border-l-4 py-3 px-20 shadow-md mb-2">
+       <img className=" h-5 w-5 mr-5 rounded-full text-white" src={check} alt="" />
+        <h2 className="text-white max-w-xl"> Client ajouter avec sucées</h2>
+    
+       </div>
+     </div>
+}
+            </>
       
 
 
