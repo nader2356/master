@@ -13,7 +13,7 @@ npm start
 
 
 a propos de fontOffice on a utilisé le tailwind css pour personnalisé notre appliaction avec le style.
-Pour configurer notre tailwind dans notre application il ya des etapes qu ont doit suivre qui sont :
+Pour configurer notre tailwind dans notre application il ya des etapes qu ont doit suivre qui sont :git
 
 
 //Install Tailwind CSS
