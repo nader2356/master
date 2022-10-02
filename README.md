@@ -46,7 +46,7 @@ npm start
 
 
 apres avoir realiser les commandes suivantes une interface d authentification de nocodb  s apparaisement dans le navigateur
-on passe maitenant a la realisation des tableau 
+on passe maintenant a la realisation des tableau 
 
 
 

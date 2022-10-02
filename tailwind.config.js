@@ -44,6 +44,7 @@ module.exports = {
       'blue': '#1fb6ff',
       'black': '#000',
       'gray-dark': '#273444',
+      // eslint-disable-next-line no-dupe-keys
       'gray': '#8492a6',
       'white': '#fff',
       'gray-light': '#d3dce6',

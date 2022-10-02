@@ -104,6 +104,8 @@ const  TypeClient = () => {
                     />
                    
                 </div>
+
+                
                 {TypeClients.map((item) => (
                     <li
                     key={item?.Id} value={item.Id}
@@ -126,8 +128,11 @@ const  TypeClient = () => {
                             }
                         }}
                     >
+                          
                     {item?.TypeClient}
                     </li>
+
+                    
                     
                 ))}
                 <div className="flex justify-start px-2 sticky top-0 w-[20%] mb-5 p-4   ml-[5%]">
