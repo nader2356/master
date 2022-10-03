@@ -44,9 +44,7 @@ const Client = () => {
     };
    
 
-    useEffect(() => {
-SetModalAddSuccefuly(true)
-    },([]))
+  
 
     const HandleSubmit = async (e) => {
         e.preventDefault();
