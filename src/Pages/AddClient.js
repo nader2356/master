@@ -43,6 +43,11 @@ const Client = () => {
         SetFormValues({ ...FormValues, [name]: value });
     };
    
+
+    useEffect(() => {
+SetModalAddSuccefuly(true)
+    },([]))
+
     const HandleSubmit = async (e) => {
         e.preventDefault();
         SetFormErrors(validate(FormValues));
@@ -406,13 +411,23 @@ const Client = () => {
         </div>
         { ModalAddSuccefuly &&
 
-       <div className="absolute right-0 top-0 m-2" >
-
+       <div className="absolute right-0 top-0 " >
+     
        <div  className="flex item-center bg-green-500  border-green-700 border-l-4 py-3 px-20 shadow-md mb-2">
-     <div className="rounded-full mr-4 w-9 h-9 bg-green-700">
-       <img className=" h-5 w-5 ml-2 mt-2  text-white" src={check} alt="" /></div>
-        <h2 className="text-white max-w-xl mt-1"> Client ajouter avec sucées</h2>
-    
+       <div class="bg-green-500  ">
+        
+          <div class="sm:flex">
+            <div class=" flex h-12 w-12 items-center justify-center rounded-full bg-green-700 ">
+            <img className=" h-5 w-5  rounded-full text-white" src={check} alt="" />
+            </div>
+            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+             
+              <div class="mt-4">
+                <p class="text-sm text-gray-500">Client ajouter avec succées</p>
+              </div>
+            </div>
+          </div>
+        </div>
        </div>
      </div>
 }
